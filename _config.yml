@@ -11,7 +11,7 @@ future: true
 # refer to http://shopify.github.io/liquid/filters/date/ if you want to customize this
 sass:
   sass_dir: _sass
-  
+
 # notion:
 #   pages:
 #     - id: 838177043c474405bcbc09826a13153b
@@ -60,7 +60,7 @@ plainwhite:
     - title: Demo
       url: http://kyl92.github.io/#:~:text=2020%20~%20Jun.%202020-,Demo,-(youtube)
     - title: Posts
-      url: 
+      url: /2024/posts/page.html
 
     # - title: Home
     #   url: "http://127.0.0.1:4000"
