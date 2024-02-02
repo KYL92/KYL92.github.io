@@ -59,8 +59,8 @@ plainwhite:
       url: http://kyl92.github.io/#:~:text=%EC%9D%B4%EA%B1%B4%EC%98%81%2C%20%EA%B9%80%EC%98%81%EC%9B%90)-,Research%20Projects,-Grant%20(9%EA%B1%B4
     - title: Demo
       url: http://kyl92.github.io/#:~:text=2020%20~%20Jun.%202020-,Demo,-(youtube)
-    - title: Posts
-      url: /2024/posts/page.html
+    # - title: Posts
+    #   url: /_site/page.html
 
     # - title: Home
     #   url: "http://127.0.0.1:4000"
