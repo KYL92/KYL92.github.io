@@ -4,7 +4,7 @@ title:  "Curriculum Vitae (CV)"
 date:   2024-01-25 12:03:36 +0530
 ---
 
-# Welcome!
+# Welcome! {#members}
 
 I work on overcoming instability and noisy data of Affective computing in the wild environment. Throughout my research, I have studied various kinds of topics to help AI deal with real-world problems in emotion recognition. Specifically, I am interested in advancing AI to better inference facial expression recognition and physiological signal sensing, such as in remote photoplethysmography and breathing rate.
 
@@ -29,7 +29,7 @@ I work on overcoming instability and noisy data of Affective computing in the wi
 
 ---
 
-# Publications [[Google Scholar Profile](https://scholar.google.co.kr/citations?user=lU9NpJUAAAAJ&hl=en)]
+# Publications {#publications} [[Google Scholar Profile](https://scholar.google.co.kr/citations?user=lU9NpJUAAAAJ&hl=en)]
 
 **[C#]: Conference, [J#]: Journal, [W#]: workshops (#: Count)**
 
@@ -111,7 +111,7 @@ I work on overcoming instability and noisy data of Affective computing in the wi
 
 ---
 
-# Patents [[pr.smu.ac.kr](https://pr.smu.ac.kr/property/%EB%93%B1%EB%A1%9D%ED%8A%B9%ED%97%88)]
+# Patents {#patents} [[pr.smu.ac.kr](https://pr.smu.ac.kr/property/%EB%93%B1%EB%A1%9D%ED%8A%B9%ED%97%88)]
 
 **[R#]: Patent Registration, [A#]: Patent Application (#: Count)**
 
@@ -157,7 +157,7 @@ I work on overcoming instability and noisy data of Affective computing in the wi
 
 ---
 
-# **Research Projects**
+# **Research Projects** {#projects}
 
 ## Grant
 
@@ -203,6 +203,24 @@ I work on overcoming instability and noisy data of Affective computing in the wi
 
 [Facial behavior analysis based on face and eye landmarks.](https://youtu.be/1uOyHijAFpQ?si=uT9DITi--88CRc9J)
 
+
+---
+
+# News {#news}
+
+### 2024
+- **January**: Ph.D. thesis defense completed
+- **February**: Graduated from Sangmyung University with Ph.D. in Computer Science
+
+### 2023
+- **December**: Paper published in Electronics journal
+- **November**: Patent application submitted for remote photoplethysmography
+- **October**: Conference presentation at IEEE/CVF Conference on Computer Vision and Pattern Recognition
+
+### 2022
+- **September**: Patent registration for dementia screening device
+- **August**: Research project completion for Hyundai NGV
+- **July**: Paper published in Applied Sciences journal
 
 [jekyll-docs]: https://jekyllrb.com/docs/home
 [jekyll-gh]:   https://github.com/jekyll/jekyll

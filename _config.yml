@@ -1,9 +1,9 @@
 # theme: plainwhite
-title: Kunyoung Lee (CV)
+title: GWNU PRLab
 author: KYL92
 email: guy9284@gmail.com
 description: > # this means to ignore newlines until "show_exerpts:"
-  A Docs Site For Curriculum Vitae
+  GWNU PRLab
 show_excerpts: true # set to true to show excerpts on the homepage
 future: true
 
@@ -11,7 +11,6 @@ future: true
 # refer to http://shopify.github.io/liquid/filters/date/ if you want to customize this
 sass:
   sass_dir: _sass
-
 # notion:
 #   pages:
 #     - id: 838177043c474405bcbc09826a13153b
@@ -19,13 +18,14 @@ sass:
   #   - id: 838177043c474405bcbc09826a13153b
 
 plainwhite:
-  name: Kunyoung Lee
-  tagline: Ph.D. Researcher in AI, Machine Learning, Affective Computing, etc.
+  name: GWNU PRLab
+  tagline: 국립강릉원주대학교 원주캠퍼스 <br> 컴퓨터공학과 <br> 패턴인식연구실
   date_format: "%b %-d, %Y"
   sitemap: true # set to true to generate sitemap.xml content
   search: true # set to true to enable searchbar
   dark_mode: true # set to true to add dark mode toggle
-  portfolio_image: "assets/portfolio.png" # the path from the base directory of the site to the image to display (no / at the start)
+  portfolio_image: "assets/Lab_logo.png" # the path from the base directory of the site to the image to display (no / at the start)
+  lab_logo: "assets/images/logo.png" # the path to the lab logo image (optional)
   html_lang: "kr" # set the lang attribute of the <html> tag for the pages. See here for a list of codes: https://www.w3schools.com/tags/ref_country_codes.asp
   condensed_mobile:
     - home
@@ -48,47 +48,12 @@ plainwhite:
     #gitlab: jekyll
 
   navigation:
-
-    - title: Home
+    - title: 연구실 소개
       url: "http://kyl92.github.io"
-    - title: Publications
-      url: http://kyl92.github.io/#:~:text=Eui%20Chul%20Lee-,Publications,-%5BGoogle%20Scholar
-    - title: Patents
-      url: http://kyl92.github.io/#:~:text=2021.11.23%20~%202021.11.30%2C%20%EC%98%A8%EB%9D%BC%EC%9D%B8.-,Patents,-%5Bpr.smu
-    - title: Projects
-      url: http://kyl92.github.io/#:~:text=%EC%9D%B4%EA%B1%B4%EC%98%81%2C%20%EA%B9%80%EC%98%81%EC%9B%90)-,Research%20Projects,-Grant%20(9%EA%B1%B4
-    - title: Demo
-      url: http://kyl92.github.io/#:~:text=2020%20~%20Jun.%202020-,Demo,-(youtube)
-    # - title: Posts
-    #   url: /_site/page.html
-
-    # - title: Home
-    #   url: "http://127.0.0.1:4000"
-    # - title: Publications
-    #   url: http://127.0.0.1:4000/#:~:text=Eui%20Chul%20Lee-,Publications,-%5BGoogle%20Scholar
-    # - title: Patents
-    #   url: http://127.0.0.1:4000/#:~:text=2021.11.23%20~%202021.11.30%2C%20%EC%98%A8%EB%9D%BC%EC%9D%B8.-,Patents,-%5Bpr.smu
-    # - title: Projects
-    #   url: http://127.0.0.1:4000/#:~:text=%EC%9D%B4%EA%B1%B4%EC%98%81%2C%20%EA%B9%80%EC%98%81%EC%9B%90)-,Research%20Projects,-Grant%20(9%EA%B1%B4
-    # - title: Demo
-    #   url: http://127.0.0.1:4000/#:~:text=2020%20~%20Jun.%202020-,Demo,-(youtube)
-    # - title: Posts
-    #   url: 
-
-    # Mastodon instances
-    # mastodon:
-    # - username: jekyll
-    #   instance: example.com
-    # - username: jekyll2
-    #   instance: example.com
-
-# If you want to link only specific pages in your header, uncomment
-# this and add the path to the pages in order as they should show up
-#header_pages:
-# - about.md
-
-# # Build settings
-# theme: plainwhite
+    - title: 주요 프로젝트
+      url: "http://kyl92.github.io"
+    - title: 성과 및 소식
+      url: "http://kyl92.github.io"
 
 plugins:
   - jekyll-seo-tag

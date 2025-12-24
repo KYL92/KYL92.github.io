@@ -10,6 +10,151 @@
     display: flex;
     justify-content: space-between;
   }
+  
+  /* Top Navigation Bar Styles */
+  .top-nav {
+    background-color: #f8f9fa;
+    border-bottom: 1px solid #e9ecef;
+    padding: 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+  }
+  
+  .nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 0;
+    padding: 0 5%;
+  }
+  
+  /* Logo Area Styles */
+  .nav-logo {
+    display: flex;
+    align-items: center;
+  }
+  
+  .nav-logo a {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+    font-size: 1.2em;
+    padding: 10px 0;
+  }
+  
+  .lab-logo {
+    height: 40px;
+    width: auto;
+    margin-right: 10px;
+  }
+  
+  .lab-name {
+    font-size: 1.3em;
+    font-weight: 600;
+  }
+  
+  /* Navigation Menu Styles */
+  .nav-menu {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+  }
+  
+  .nav-menu li {
+    margin: 0;
+  }
+  
+  .nav-menu a {
+    display: block;
+    padding: 15px 20px;
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+    transition: all 0.3s ease;
+  }
+  
+  .nav-menu a:hover {
+    background-color: #e9ecef;
+    color: #007bff;
+  }
+  
+  .nav-menu a.active {
+    background-color: #007bff;
+    color: white;
+  }
+  
+  /* Dark mode support for top nav */
+  .dark .top-nav {
+    background-color: #2d3748;
+    border-bottom: 1px solid #4a5568;
+  }
+  
+  .dark .nav-logo a {
+    color: #e2e8f0;
+  }
+  
+  .dark .nav-menu a {
+    color: #e2e8f0;
+  }
+  
+  .dark .nav-menu a:hover {
+    background-color: #4a5568;
+    color: #63b3ed;
+  }
+  
+  .dark .nav-menu a.active {
+    background-color: #3182ce;
+    color: white;
+  }
+  
+  /* Mobile responsive */
+  @media (max-width: 768px) {
+    .nav-container {
+      flex-direction: column;
+      padding: 10px 20px;
+    }
+    
+    .nav-logo {
+      margin-bottom: 10px;
+    }
+    
+    .nav-menu {
+      flex-direction: column;
+      width: 100%;
+    }
+    
+    .nav-menu a {
+      padding: 12px 15px;
+      text-align: center;
+      width: 100%;
+    }
+  }
+  
+  /* Hide sidebar on non-home pages */
+  .no-sidebar .about {
+    display: none;
+  }
+  
+  .no-sidebar .content {
+    margin-left: 0 !important;
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+  
+  .no-sidebar main {
+    margin: 0 20px;
+  }
+  
+  @media screen and (max-width: 768px) {
+    .no-sidebar main {
+      margin: 0 10px;
+    }
+  }
 </style>
 
 {%- if site.plainwhite.condensed_mobile contains page.layout -%}
@@ -18,8 +163,39 @@
 {% assign condensed_class = "" %}
 {%- endif -%}
 
-<body>
+{%- if page.url == "/" or page.url == "/index.html" -%}
+{% assign body_class = "" %}
+{%- else -%}
+{% assign body_class = "no-sidebar" %}
+{%- endif -%}
+
+<body class="{{ body_class }}">
+  <!-- Top Navigation Bar -->
+  <nav class="top-nav">
+    <div class="nav-container">
+      <!-- Logo Area -->
+      <div class="nav-logo">
+        <a href="{{ "/" | relative_url }}">
+          <!-- {% if site.plainwhite.lab_logo %}
+          <img src="{{ site.plainwhite.lab_logo | relative_url }}" alt="PRLab Logo" class="lab-logo">
+          {% endif %} -->
+          <span class="lab-name">Pattern Recognition Lab</span>
+        </a>
+      </div>
+      
+      <!-- Navigation Menu -->
+      <ul class="nav-menu">
+        <li><a href="{{ "/" | relative_url }}">Home</a></li>
+        <li><a href="{{ "/" | relative_url }}#members">Members</a></li>
+        <li><a href="{{ "/2024/01/25/publications.html" | relative_url }}">Publications</a></li>
+        <li><a href="{{ "/" | relative_url }}#projects">Projects</a></li>
+        <li><a href="{{ "/" | relative_url }}#patents">Intellectual Property</a></li>
+      </ul>
+    </div>
+  </nav>
+
   <main class="container">
+    {% if page.url == "/" or page.url == "/index.html" %}
     <section class="about">
       <div class="about-header {{condensed_class}}">
       <div class="about-title">
@@ -167,6 +343,7 @@
       {% endcapture %}
       {{ footer }}
     </section>
+    {% endif %}
     <section class="content">
       {{ content }}
     </section>
@@ -192,6 +369,49 @@
   <script src="{{ "/assets/js/simple-jekyll-search.min.js" | relative_url }}"></script>
   <script src="{{ "/assets/js/search.js" | relative_url }}"></script>
   {% endif %}
+  
+  <!-- Navigation active state script -->
+  <script>
+    // Get current page URL
+    const currentPage = window.location.pathname;
+    const currentHash = window.location.hash;
+    
+    // Get all navigation links
+    const navLinks = document.querySelectorAll('.nav-menu a');
+    
+    // Set active state based on current page and hash
+    navLinks.forEach(link => {
+      const linkUrl = link.getAttribute('href');
+      
+      // Check if this is the current page (Home button)
+      if (currentPage === '/' && linkUrl === '{{ "/" | relative_url }}' && !currentHash) {
+        link.classList.add('active');
+      }
+      
+      // Check if this is the Publication page
+      if (currentPage === '/2024/01/25/publications.html' && linkUrl.includes('publications.html')) {
+        link.classList.add('active');
+      }
+      
+      // Check if this matches the current hash
+      if (currentHash && linkUrl.includes(currentHash)) {
+        link.classList.add('active');
+      }
+    });
+    
+    // Update active state when hash changes
+    window.addEventListener('hashchange', function() {
+      const newHash = window.location.hash;
+      
+      navLinks.forEach(link => {
+        link.classList.remove('active');
+        
+        if (newHash && link.getAttribute('href').includes(newHash)) {
+          link.classList.add('active');
+        }
+      });
+    });
+  </script>
 </body>
 
 </html>

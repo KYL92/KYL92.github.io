@@ -61,6 +61,17 @@ plainwhite:
   portfolio_image:  "assets/portfolio.png" # the path from the base directory of the site to the image to display (no / at the start)
 ```
 
+**Adding Lab Logo**
+
+You can add a lab logo to the top navigation bar by placing your logo image in the `assets/images/` directory and specifying the path in `_config.yml`:
+
+```yaml
+plainwhite:
+  lab_logo: "assets/images/logo.png" # the path to the lab logo image (optional)
+```
+
+The logo will appear on the left side of the navigation bar. If no logo is specified, only the lab name "PRLab" will be displayed.
+
 To use a different image for dark mode, e.g. with different colors that work better in dark mode, add a `portfolio_image_dark` entry in addition to the `portfolio_image`.
 
 ```yaml
