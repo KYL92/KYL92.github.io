@@ -23,10 +23,34 @@
   
   .nav-container {
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-start;
     align-items: center;
     margin: 0 0;
-    padding: 0 5%;
+    padding: 0 5% 0 60px;
+  }
+  
+  /* 홈페이지: 타이틀은 사이드바 위치(main의 왼쪽 마진), 메뉴는 콘텐츠 위치(main의 왼쪽 마진 + 사이드바 너비) */
+  body:not(.no-sidebar) .nav-menu {
+    margin-left: 220px; /* 사이드바 너비($leftWidth) */
+  }
+  
+  @media screen and (max-width: 1280px) {
+    .nav-container {
+      padding-left: 25px;
+    }
+    body:not(.no-sidebar) .nav-menu {
+      margin-left: 220px;
+    }
+  }
+  
+  @media screen and (max-width: 768px) {
+    .nav-container {
+      padding: 10px 20px;
+      flex-direction: column;
+    }
+    body:not(.no-sidebar) .nav-menu {
+      margin-left: 0;
+    }
   }
   
   /* Logo Area Styles */
@@ -114,10 +138,6 @@
   
   /* Mobile responsive */
   @media (max-width: 768px) {
-    .nav-container {
-      flex-direction: column;
-      padding: 10px 20px;
-    }
     
     .nav-logo {
       margin-bottom: 10px;
@@ -174,7 +194,7 @@
   <nav class="top-nav">
     <div class="nav-container">
       <!-- Logo Area -->
-      <div class="nav-logo">
+      <div class="nav-logo" style="margin-right: 40px;">
         <a href="{{ "/" | relative_url }}">
           <!-- {% if site.plainwhite.lab_logo %}
           <img src="{{ site.plainwhite.lab_logo | relative_url }}" alt="PRLab Logo" class="lab-logo">
