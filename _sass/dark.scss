@@ -27,6 +27,7 @@
 		border-bottom: 1px solid #272727;
 	}
 
+	// Remove theme switching; always use dark theme
 	@import 'ext/solarized-dark';
 	.highlight, .highlight *
 	{

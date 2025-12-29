@@ -23,54 +23,36 @@
   
   .nav-container {
     display: flex;
-    justify-content: flex-start;
+    justify-content: space-between;
     align-items: center;
     margin: 0 0;
-    padding: 0 5% 0 60px;
-  }
-  
-  /* 홈페이지: 타이틀은 사이드바 위치(main의 왼쪽 마진), 메뉴는 콘텐츠 위치(main의 왼쪽 마진 + 사이드바 너비) */
-  body:not(.no-sidebar) .nav-menu {
-    margin-left: 220px; /* 사이드바 너비($leftWidth) */
-  }
-  
-  @media screen and (max-width: 1280px) {
-    .nav-container {
-      padding-left: 25px;
-    }
-    body:not(.no-sidebar) .nav-menu {
-      margin-left: 220px;
-    }
-  }
-  
-  @media screen and (max-width: 768px) {
-    .nav-container {
-      padding: 10px 20px;
-      flex-direction: column;
-    }
-    body:not(.no-sidebar) .nav-menu {
-      margin-left: 0;
-    }
+    padding: 0 0 0 0;
   }
   
   /* Logo Area Styles */
   .nav-logo {
     display: flex;
     align-items: center;
+    /* 너비 조절: 기본값, 필요시 max-width 사용 가능 */
+    width: 20%;       /* 예시: 원하는 너비로 조절 */
+    max-width: 300px;   /* 최대 너비 제한 (선택사항) */
+    min-width: 120px;   /* 최소 너비 (선택사항) */
+    flex-shrink: 0;     /* 축소 방지 */
   }
   
   .nav-logo a {
     display: flex;
-    align-items: center;
+    align-items: left;
     text-decoration: none;
     color: #333;
     font-weight: bold;
     font-size: 1.2em;
-    padding: 10px 0;
+    margin: 2px 5px 2px 5px;
+    padding: 2px 5px 2px 5px;
+    width: 100%;       /* a태그가 nav-logo 영역을 모두 커버하도록 */
   }
-  
   .lab-logo {
-    height: 40px;
+    height: auto;
     width: auto;
     margin-right: 10px;
   }
@@ -138,6 +120,10 @@
   
   /* Mobile responsive */
   @media (max-width: 768px) {
+    .nav-container {
+      flex-direction: column;
+      padding: 10px 20px;
+    }
     
     .nav-logo {
       margin-bottom: 10px;
@@ -189,12 +175,12 @@
 {% assign body_class = "no-sidebar" %}
 {%- endif -%}
 
-<body class="{{ body_class }}">
+<body class="{{ body_class }} dark">
   <!-- Top Navigation Bar -->
   <nav class="top-nav">
     <div class="nav-container">
       <!-- Logo Area -->
-      <div class="nav-logo" style="margin-right: 40px;">
+      <div class="nav-logo">
         <a href="{{ "/" | relative_url }}">
           <!-- {% if site.plainwhite.lab_logo %}
           <img src="{{ site.plainwhite.lab_logo | relative_url }}" alt="PRLab Logo" class="lab-logo">
@@ -206,10 +192,11 @@
       <!-- Navigation Menu -->
       <ul class="nav-menu">
         <li><a href="{{ "/" | relative_url }}">Home</a></li>
-        <li><a href="{{ "/" | relative_url }}#members">Members</a></li>
-        <li><a href="{{ "/2024/01/25/publications.html" | relative_url }}">Publications</a></li>
+        <li><a href="{{ "/2025/12/24/members.html" | relative_url }}">Members</a></li>
         <li><a href="{{ "/" | relative_url }}#projects">Projects</a></li>
-        <li><a href="{{ "/" | relative_url }}#patents">Intellectual Property</a></li>
+        <li><a href="{{ "/2024/01/25/publications.html" | relative_url }}">Publications</a></li>
+        <li><a href="{{ "/" | relative_url }}#patents">patents</a></li>
+        <li><a href="{{ "/" | relative_url }}#Lecture">Lectures</a></li>
       </ul>
     </div>
   </nav>
@@ -349,17 +336,9 @@
         {%- endif -%}
       </ul>
       {%- endif -%}
-      {%- if site.plainwhite.dark_mode -%}
-      <div class="about-footer {{condensed_class}}">
-        <p>Dark Mode
-          <i class="icon-moon"></i>
-          <label class="switch">
-            <input type="checkbox" class="dark-mode-toggle">
-            <span class="slider round" onclick="toggleDarkMode()"></span>
-          </label>
-        </p>
-      </div>
-      {%- endif -%}
+      {%- comment -%}
+      Dark mode toggle removed - always using dark theme
+      {%- endcomment -%}
       {% endcapture %}
       {{ footer }}
     </section>
