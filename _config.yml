@@ -1,7 +1,9 @@
 # theme: plainwhite
-title: GWNU PRLab
+title: GWNU-PRLab
 author: KYL92
-email: guy9284@gmail.com
+email: kyle@gwnu.ac.kr
+url: "https://prl.gwnu.ac.kr" # 커스텀 도메인
+baseurl: "" # 서브디렉토리가 없으면 빈 문자열
 description: > # this means to ignore newlines until "show_exerpts:"
   GWNU-PRLab
 show_excerpts: true # set to true to show excerpts on the homepage
@@ -34,7 +36,7 @@ plainwhite:
   # generate social links in footer
   social_links:
     # twitter: KYL92
-    email: guy9284@gmail.com
+    email: kyle@gwnu.ac.kr
     github:  KYL92
     youtube: /@user-jf9ru4vb3q
     # linkedIn: KYL92
@@ -49,11 +51,11 @@ plainwhite:
 
   navigation:
     - title: 연구실 소개
-      url: "http://kyl92.github.io"
+      url: "https://prl.gwnu.ac.kr"
     - title: 주요 프로젝트
-      url: "http://kyl92.github.io"
+      url: "https://prl.gwnu.ac.kr"
     - title: 성과 및 소식
-      url: "http://kyl92.github.io"
+      url: "https://prl.gwnu.ac.kr"
 
 plugins:
   - jekyll-seo-tag
