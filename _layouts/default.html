@@ -13,20 +13,42 @@
   
   /* Top Navigation Bar Styles */
   .top-nav {
-    background-color: #f8f9fa;
-    border-bottom: 1px solid #e9ecef;
+    background-color: #171717 !important;  /* dark 모드 배경색과 동일하게 설정 */
+    border-bottom: 1px solid #181818;
     padding: 0;
     position: sticky;
     top: 0;
-    z-index: 1000;
+    z-index: 600;
+    width: 100%;  /* 전체 너비 사용 */
   }
   
   .nav-container {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin: 0 0;
-    padding: 0 0 0 0;
+    margin: 0 auto;
+    padding: 0 10px;  /* main.container의 padding과 동일하게 */
+    max-width: 100%;  /* main.container와 동일한 너비 제한 */
+    background-color: transparent !important;  /* 배경색 투명 */
+  }
+  
+  /* main.container와 동일한 너비 제한 적용 */
+  @media screen and (min-width: 960px) {
+    .nav-container {
+      max-width: 960px;
+    }
+  }
+  
+  @media screen and (max-width: 1280px) {
+    .nav-container {
+      padding: 0 25px;  /* main.container와 동일 */
+    }
+  }
+  
+  @media screen and (max-width: 768px) {
+    .nav-container {
+      padding: 0 10px;  /* main.container와 동일 */
+    }
   }
   
   /* Logo Area Styles */
@@ -34,7 +56,7 @@
     display: flex;
     align-items: center;
     /* 너비 조절: 기본값, 필요시 max-width 사용 가능 */
-    width: 20%;       /* 예시: 원하는 너비로 조절 */
+    width: 10%;       /* 예시: 원하는 너비로 조절 */
     max-width: 300px;   /* 최대 너비 제한 (선택사항) */
     min-width: 120px;   /* 최소 너비 (선택사항) */
     flex-shrink: 0;     /* 축소 방지 */
@@ -44,7 +66,7 @@
     display: flex;
     align-items: left;
     text-decoration: none;
-    color: #333;
+    color: #ffffff;
     font-weight: bold;
     font-size: 1.2em;
     margin: 2px 5px 2px 5px;
@@ -54,7 +76,7 @@
   .lab-logo {
     height: auto;
     width: auto;
-    margin-right: 10px;
+    margin-right: 5px;
   }
   
   .lab-name {
@@ -96,8 +118,13 @@
   
   /* Dark mode support for top nav */
   .dark .top-nav {
-    background-color: #2d3748;
-    border-bottom: 1px solid #4a5568;
+    background-color: #171717 !important;  /* body 배경색과 동일 (#171717) */
+    border-bottom: 1px solid #181818;
+  }
+  
+  /* Light mode (혹시 사용 시 대비) */
+  body:not(.dark) .top-nav {
+    background-color: #171717 !important;  /* 항상 검정색 */
   }
   
   .dark .nav-logo a {
@@ -118,26 +145,57 @@
     color: white;
   }
   
-  /* Mobile responsive */
+  /* Mobile responsive - 가로 레이아웃 유지 */
   @media (max-width: 768px) {
     .nav-container {
-      flex-direction: column;
-      padding: 10px 20px;
+      flex-direction: row !important;  /* 가로 레이아웃 유지 */
+      justify-content: space-between !important;
+      align-items: center !important;
+      padding: 5px 10px !important;
+      flex-wrap: wrap;  /* 필요시 줄바꿈 */
     }
     
     .nav-logo {
-      margin-bottom: 10px;
+      margin-bottom: 0 !important;
+      flex-shrink: 0;
+      width: auto !important;
+      min-width: auto !important;
+    }
+    
+    .nav-logo .lab-name {
+      font-size: 1.0em !important;  /* 모바일에서 로고 텍스트 작게 */
     }
     
     .nav-menu {
-      flex-direction: column;
-      width: 100%;
+      flex-direction: row !important;  /* 가로 레이아웃 유지 */
+      width: auto !important;
+      flex-wrap: wrap;  /* 필요시 줄바꿈 */
+      justify-content: flex-end;
+      gap: 2px;  /* 메뉴 아이템 간 간격 */
+    }
+    
+    .nav-menu li {
+      margin: 0 !important;
     }
     
     .nav-menu a {
-      padding: 12px 15px;
-      text-align: center;
-      width: 100%;
+      padding: 8px 10px !important;  /* 모바일에서 패딩 줄임 */
+      text-align: center !important;
+      width: auto !important;
+      font-size: 0.85em !important;  /* 폰트 크기 줄임 */
+      white-space: nowrap;  /* 텍스트 줄바꿈 방지 */
+    }
+  }
+  
+  /* 매우 작은 화면 (예: 480px 이하)에서 메뉴 아이템 더 작게 */
+  @media (max-width: 480px) {
+    .nav-logo .lab-name {
+      font-size: 0.9em !important;
+    }
+    
+    .nav-menu a {
+      padding: 6px 8px !important;
+      font-size: 0.8em !important;
     }
   }
   
@@ -154,11 +212,175 @@
   
   .no-sidebar main {
     margin: 0 20px;
+    max-width: 100% !important;
+  }
+  
+  /* Post 레이아웃만 더 넓은 너비로 설정 (데스크탑) */
+  body.no-sidebar main.container {
+    max-width: 95% !important;
+    min-width: 768px !important;
+    margin: 0 auto !important;
+    padding: 0 !important;
+  }
+  
+  body.no-sidebar .post-container {
+    width: 66% !important;
+    max-width: 66% !important;
+    min-width: 768px !important;
+    margin: 0 auto !important;
+  }
+  
+  body.no-sidebar .content {
+    width: 66% !important;
+    max-width: 66% !important;
+    min-width: 768px !important;
+    margin: 0 auto !important;
+  }
+  
+  /* 모바일에서 post 페이지 레이아웃 조정 - 홈화면과 동일한 너비 */
+  @media screen and (max-width: 768px) {
+    body.no-sidebar main.container {
+      max-width: 100% !important;
+      min-width: 0 !important;
+      margin: 0 auto !important;
+      padding: 10px 15px !important;  /* 홈화면과 동일한 패딩 */
+    }
+    
+    body.no-sidebar .post-container {
+      width: 100% !important;
+      max-width: 100% !important;
+      min-width: 0 !important;
+      margin: 0 auto !important;
+      padding: 0 !important;
+    }
+    
+    body.no-sidebar .content {
+      width: 100% !important;
+      max-width: 100% !important;
+      min-width: 0 !important;
+      margin: 0 auto !important;
+    }
+    
+    .no-sidebar main {
+      margin: 0 auto !important;
+    }
+  }
+  
+  /* Tagline 폰트 크기 줄이기 및 스타일 개선 */
+  .tagline {
+    font-size: 18px !important;  /* 기본 20px에서 18px로 줄임 */
+    line-height: 1.5 !important;
+    font-weight: 1000 !important;  /* 굵은 폰트 */
+    color: #bbbbbb !important;  /* 더 밝은 색상 */
+    margin-bottom: 25px !important;  /* 태그라인과 네비게이션 사이 간격 줄이기 */
   }
   
   @media screen and (max-width: 768px) {
-    .no-sidebar main {
-      margin: 0 10px;
+    .tagline {
+      font-size: 14px !important;  /* 모바일에서는 더 작게 */
+      font-weight: 1000 !important;  /* 굵은 폰트 유지 */
+    }
+  }
+  
+  /* 네비게이션 위치 위로 올리기 */
+  .navigation {
+    margin-top: -15px !important;  /* 네비게이션을 위로 올림 */
+  }
+  
+  /* about-header와 네비게이션 사이 간격 줄이기 */
+  .about-header {
+    margin-bottom: 10px !important;  /* 기본 20px에서 10px로 줄임 */
+  }
+  
+  /* Home page layout: sidebar and main content side by side */
+  /* 홈 페이지에서만 적용되는 레이아웃 (body_class가 없을 때) */
+  body:not(.no-sidebar) main.container {
+    display: flex !important;
+    flex-wrap: nowrap;
+    align-items: flex-start;
+    gap: 0px;
+    padding: 0px;
+    margin: 0 auto;  /* 중앙 정렬 */
+    max-width: 100%;  /* 기본 최대 너비 */
+  }
+  
+  /* main.container와 nav-container의 너비를 동일하게 맞춤 */
+  @media screen and (min-width: 960px) {
+    body:not(.no-sidebar) main.container {
+      max-width: 960px;
+    }
+  }
+  
+  @media screen and (max-width: 1280px) {
+    body:not(.no-sidebar) main.container {
+      padding: 0px 0px;
+    }
+  }
+  
+  @media screen and (max-width: 768px) {
+    body:not(.no-sidebar) main.container {
+      padding: 0px;
+    }
+  }
+  
+  /* Sidebar (about section) - 홈 페이지에서만, 전체 너비의 15% */
+  body:not(.no-sidebar) section.about {
+    flex: 0 0 15% !important;  /* 전체 너비의 15% 고정 */
+    width: 15% !important;
+    max-width: 15% !important;
+    min-width: 15% !important;
+    position: relative !important;  /* fixed 대신 relative 사용 */
+    top: auto !important;
+    margin-left: 5% !important;
+  }
+  
+  /* Main content area - 홈 페이지에서만, 전체 너비의 85% */
+  body:not(.no-sidebar) section.content {
+    flex: 0 0 85% !important;  /* 전체 너비의 85% 고정 */
+    width: 85% !important;
+    max-width: 85% !important;
+    min-width: 0 !important;  /* flexbox에서 최소 너비를 0으로 설정하여 축소 가능하게 */
+    margin-left: -3% !important;  /* 기존 margin-left 제거 */
+  }
+  
+  /* Responsive: 모바일에서는 사이드바 숨기기 */
+  @media screen and (max-width: 768px) {
+    body:not(.no-sidebar) main.container {
+      flex-direction: row !important;  /* flex-direction 유지 (사이드바가 display:none이므로) */
+      padding: 10px 15px !important;  /* 좌우 여백 추가 */
+      gap: 0 !important;
+      max-width: 100% !important;
+    }
+    
+    /* 모바일에서 사이드바 완전히 숨기기 */
+    body:not(.no-sidebar) section.about {
+      display: none !important;
+    }
+    
+    /* 모바일에서 메인 콘텐츠가 전체 너비 차지 */
+    body:not(.no-sidebar) section.content {
+      width: 100% !important;
+      max-width: 100% !important;
+      min-width: 100% !important;
+      flex: 1 1 auto !important;
+      margin-left: 0 !important;
+      margin-right: 0 !important;
+    }
+  }
+  
+  /* 작은 태블릿 크기에서도 레이아웃 조정 */
+  @media screen and (max-width: 900px) and (min-width: 769px) {
+    body:not(.no-sidebar) section.about {
+      flex: 0 0 15% !important;  /* 작은 화면에서는 15% */
+      width: 15% !important;
+      max-width: 15% !important;
+      min-width: 15% !important;
+    }
+    
+    body:not(.no-sidebar) section.content {
+      flex: 0 0 85% !important;  /* 작은 화면에서는 85% */
+      width: 85% !important;
+      max-width: 85% !important;
     }
   }
 </style>
@@ -193,10 +415,10 @@
       <ul class="nav-menu">
         <li><a href="{{ "/" | relative_url }}">Home</a></li>
         <li><a href="{{ "/2025/12/24/members.html" | relative_url }}">Members</a></li>
-        <li><a href="{{ "/" | relative_url }}#projects">Projects</a></li>
+        <li><a href="{{ "/projects.html" | relative_url }}">Projects</a></li>
         <li><a href="{{ "/2024/01/25/publications.html" | relative_url }}">Publications</a></li>
-        <li><a href="{{ "/" | relative_url }}#patents">patents</a></li>
-        <li><a href="{{ "/" | relative_url }}#Lecture">Lectures</a></li>
+        <li><a href="{{ "/patents.html" | relative_url }}">Patents</a></li>
+        <li><a href="{{ "/lectures.html" | relative_url }}">Lectures</a></li>
       </ul>
     </div>
   </nav>

@@ -20,7 +20,7 @@ sass:
 
 plainwhite:
   name: GWNU-PRLab
-  tagline: 국립강릉원주대학교 <br> 원주캠퍼스 <br> 컴퓨터공학과 <br> 패턴인식연구실
+  tagline: 통합강원대학교 <br> 원주캠퍼스 <br> 컴퓨터공학과 <br> 패턴인식연구실
   date_format: "%b %-d, %Y"
   sitemap: true # set to true to generate sitemap.xml content
   search: true # set to true to enable searchbar

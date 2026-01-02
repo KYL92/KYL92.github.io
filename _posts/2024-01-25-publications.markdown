@@ -3,27 +3,54 @@ layout: post
 title:  "Publications"
 date:   2024-01-25 12:03:36 +0530
 ---
-**[C#]: Conference, [J#]: Journal, [W#]: workshops (#: Count)**           &nbsp;&nbsp;    [[Google Scholar](https://scholar.google.co.kr/citations?user=lU9NpJUAAAAJ&hl=en)]
+<p class="publication-legend">J#:Journal, C#:Conference, W#:Workshops (#:Count) 
 
+<p class="publication-title">2024
+<style>
+  @media screen and (max-width: 768px) {
+    .publication-legend {
+      font-size: 70% !important;
+    }
+    .publication-card {
+      margin-top: 0 !important;
+    }
+    .publication-image {
+      width: 70px !important;
+      height: 70px !important;
+    }
+    .publication-title,
+    .publication-title span {
+      font-size: 90% !important;
+    }
+    .publication-author {
+      font-size: 60% !important;
+    }
+    .publication-tag {
+      font-size: 60% !important;
+    }
+    .publication-journal {
+      font-size: 60% !important;
+    }
+  }
+</style>
 
-## 2024
-
-<div style="margin: 10px 0;">
-  <div style="display: flex; align-items: center; margin-bottom: 10px; padding: 12px; border: 1px solid #e8e8e8; border-radius: 6px;">
-    <img src="https://via.placeholder.com/100x100/1976d2/ffffff?text=rPPG" alt="rPPG Paper" style="width: 160px; height: 160px; border-radius: 6px; margin-right: 15px; flex-shrink: 0;" />
-    <div style="flex: 1;">
-      <div style="display: flex; align-items: center; margin-bottom: 6px;">
-        <span style="padding: 4px 8px; border-radius: 5px; background:rgb(223, 126, 16); border: 1px solid #e8e8e8; font-size: 1.1em; font-weight: bold; color:rgb(41, 41, 41); margin-left: 2px; margin-right: 12px;"> J11 </span>
-        <span style="margin: 6px 0; color: ##e8e8e8; font-size: 1.0em;">"Improving Remote Photoplethysmography Performance through Deep-Learning-Based Real-Time Skin Segmentation Network"</span>
-      </div>
-      <p style="margin: 4px 0; color: ###e8e8e8; font-size: 0.9em;">Kunyoung Lee, Jaemu Oh, Hojoon You, and Eui Chul Lee</p>
-      <div style="margin-top: 6px;">
-        <span style="background: #e3f2fd; color: #1976d2; padding: 2px 5px; border-radius: 3px; font-size: 0.75em; margin-right: 4px;">Remote PPG</span>
-        <span style="background: #f3e5f5; color: #7b1fa2; padding: 2px 5px; border-radius: 3px; font-size: 0.75em; margin-right: 4px;">Deep Learning</span>
-        <span style="background: #e8f5e8; color: #388e3c; padding: 2px 5px; border-radius: 3px; font-size: 0.75em;">Real-time</span>
+<div class="publication-card" style="margin-top:-10px; padding-left: 22px; position: relative;">
+  <div style="display: flex; align-items: center; border: 1px solid #e8e8e8; border-radius: 3px; padding: 0px 8px 0px 8px; ">
+    <img class="publication-image" src="" alt="rPPG Paper" style="width: 100px; height: 100px; border-radius: 6px; margin-right: 6px; flex-shrink: 0; object-fit: cover;" />
+    <div style="flex: 1; padding: 4px 0;">
+      <div style="display: flex; align-items: center; margin-bottom: 4px; line-height: 1.3;">
+        <a href="https://www.mdpi.com/2079-9292/12/17/3729" target="_blank" class="paper-title-link publication-title" style="margin: 0; color: ##e8e8e8; font-size: 1.0em; line-height: 1.3; text-decoration: none; cursor: pointer;">
+          <span style="color: ##e8e8e8; transition: color 0.2s;">Improving Remote Photoplethysmography Performance through Deep-Learning-Based Real-Time Skin Segmentation Network</span>
+        </a></div><style> .paper-title-link:hover, .paper-title-link:hover span {color: #4da3ff !important;}</style>
+      <p class="publication-author" style="margin: 2px 0; color: ###e8e8e8; font-size: 0.8em; line-height: 1.2;">Kunyoung Lee, Jaemu Oh, Hojoon You, and Eui Chul Lee</p>
+      <div style="margin-top: 3px;">
+        <span class="publication-tag" style="background: #e3f2fd; color: #1976d2; padding: 4px 5px; border-radius: 3px; font-size: 0.65em; margin-right: 3px; line-height: 1.2;">Remote PPG</span>
+        <span class="publication-tag" style="background: #f3e5f5; color: #7b1fa2; padding: 4px 5px; border-radius: 3px; font-size: 0.65em; margin-right: 3px; line-height: 1.2;">Deep Learning</span>
+        <span class="publication-tag" style="background: #e8f5e8; color: #388e3c; padding: 4px 5px; border-radius: 3px; font-size: 0.65em; margin-right: 3px; line-height: 1.2;">Real-time</span>
       </div>
     </div>
   </div>
+  <span class="publication-journal" style="position: absolute; top: 0px; left: 0px; padding: 0px 2px; border-radius: 3px; background:rgb(223, 126, 16); font-size: 0.75em; font-weight: 1600; color:rgb(255, 255, 255);"> J11 </span>
 </div>
 
 > **[J12]** **Kunyoung Lee**, Jaemu Oh, Hojoon You, and Eui Chul Lee. **Advanced Remote Photoplethysmography with Multi-Scale Feature Fusion.** *IEEE Transactions on Biomedical Engineering* (Under Review).

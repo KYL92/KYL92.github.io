@@ -1,49 +1,52 @@
 ---
 layout: post
-title:  "연구실 구성원들"
+title:  "구성원"
 date:   2025-12-24 12:03:36 +0530
 ---
 ### 지도교수
-<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin: 0 0 0px 0; padding: 0;">
+<style>
+  @media screen and (max-width: 768px) {
+    .professor-grid {
+      grid-template-columns: 1fr !important;
+    }
+  }
+</style>
+<div class="professor-grid" style="display: grid; grid-template-columns: 1fr 0.5fr; gap: 10px; margin: 0 0 0px 0; padding: 0;">
   <!-- 카드 1: 교수 예시 -->
   <div style="display: flex; align-items: flex-start; padding: 10px 5px; border: 2px solid #4a5568; border-radius: 6px; background: #181818; margin: 0;">
-    <img src="{{ '/porait/KYL.jpg' | relative_url }}" alt="교수사진" style="width: 30%; border-radius: 3px; margin-right: 6px; object-fit: cover; flex-shrink: 0; max-width: 160px; min-width: 90px; aspect-ratio: 1/1; background: rgb(40, 47, 60);" />
+    <img src="{{ '/porait/KYL.jpg' | relative_url }}" alt="교수사진" style="width: 25%; border-radius: 3px; margin-right: 6px; object-fit: cover; flex-shrink: 0; max-width: 160px; min-width: 90px; aspect-ratio: 1/1; background: rgb(1, 1, 2);" />
     <div style="flex: 1; min-width: 0; background: rgb(40, 47, 60);">
-      <p style="margin: 0px 0; font-size: 1.2em;"> 이 건 영</p>
-      <p style="margin: 0px 0; font-size: 0.9em; line-height: 1.8">[소속] 국립강릉원주대학교 컴퓨터공학과 조교수 <br>[Email] kyle@gwnu.ac.kr <br>[관심분야] 영상신호처리 및 인공지능 <br> <a href="{{ site.url }}/download/CV.pdf" target="_blank" style="color: #4da3ff; text-decoration: none;">📄 CV</a> <a href="https://scholar.google.com/citations?user=YOUR_SCHOLAR_ID" target="_blank" style="color: #4da3ff; text-decoration: none;">📄 Google Scholar</a> <a href="https://github.com/KYL92" target="_blank" style="color: #4da3ff; text-decoration: none;">📄 GitHub</a></p>
+      <p style="margin: 0px 0; font-size: 1.0em; line-height: 1.8">이건영/조교수</p>
+      <p style="margin: 0px 0; font-size: 0.9em; line-height: 1.5">소속: 통합강원대학교 원주캠퍼스 컴퓨터공학과  <br>관심분야: 영상처리 및 인공지능<br>Email: kyle@gwnu.ac.kr<br> <a href="{{ site.url }}/download/CV.pdf" target="_blank" style="color: #4da3ff; text-decoration: none;">📄CV</a>  <a href="https://github.com/KYL92" target="_blank" style="color: #4da3ff; text-decoration: none;">📄GitHub</a> <a href="https://scholar.google.com/citations?user=YOUR_SCHOLAR_ID" target="_blank" style="color: #4da3ff; text-decoration: none;">📄Research</a></p>
       <!-- 텍스트 입력란 또는 회원 정보 영역 -->
     </div>
   </div>
 </div>
 
 ### 참여연구원
-<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin: 0 0 16px 0; padding: 0;">
+<style>
+  @media screen and (max-width: 768px) {
+    .member-grid {
+      grid-template-columns: 1fr !important;
+    }
+  }
+</style>
+<div class="member-grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin: 0 0 16px 0; padding: 0;">
   <!-- 카드 1: 참여연구원 예시 -->
   <div style="display: flex; align-items: flex-start; padding: 10px 5px; border: 2px solid #4a5568; border-radius: 6px; background: #181818; margin: 0;">
-    <img src="{{ '/porait/default.jpg' | relative_url }}" alt="교수사진" style="width: 30%; border-radius: 3px; margin-right: 6px; object-fit: cover; flex-shrink: 0; max-width: 160px; min-width: 90px; aspect-ratio: 1/1; background: rgb(40, 47, 60);" />
+    <img src="{{ '/porait/default.jpg' | relative_url }}" alt="교수사진" style="width: 25%; border-radius: 3px; margin-right: 6px; object-fit: cover; flex-shrink: 0; max-width: 160px; min-width: 90px; aspect-ratio: 1/1; background: rgb(1, 1, 2);" />
     <div style="flex: 1; min-width: 0; background: rgb(40, 47, 60);">
-      <p style="margin: 0px 0; font-size: 1.2em;"> 채용예정자 </p>
-      <p style="margin: 0px 0; font-size: 0.9em; line-height: 1.8">소속:  <br>E-mail:  <br>관심분야:  <br> <a href="" target="_blank" style="color: #4da3ff; text-decoration: none;">📄 CV</a> <a href="" target="_blank" style="color: #4da3ff; text-decoration: none;">📄 Google Scholar</a> <a href="" target="_blank" style="color: #4da3ff; text-decoration: none;">📄 GitHub</a></p>
+      <p style="margin: 0px 0; font-size: 1.0em;"> 채용예정</p>
+      <p style="margin: 0px 0; font-size: 0.9em; line-height: 1.4">소속: <br>Email: <br>관심분야: <br> <a href="{{ site.url }}/download/CV.pdf" target="_blank" style="color: #4da3ff; text-decoration: none;">📄CV</a>  <a href="https://github.com/KYL92" target="_blank" style="color: #4da3ff; text-decoration: none;">📄GitHub</a> <a href="https://scholar.google.com/citations?user=YOUR_SCHOLAR_ID" target="_blank" style="color: #4da3ff; text-decoration: none;">📄Research</a></p>
       <!-- 텍스트 입력란 또는 회원 정보 영역 -->
     </div>
   </div>
   <!-- 카드 2: 참여연구원 예시 -->
   <div style="display: flex; align-items: flex-start; padding: 10px 5px; border: 2px solid #4a5568; border-radius: 6px; background: #181818; margin: 0;">
-    <img src="{{ '/porait/default.jpg' | relative_url }}" alt="교수사진" style="width: 30%; border-radius: 3px; margin-right: 6px; object-fit: cover; flex-shrink: 0; max-width: 160px; min-width: 90px; aspect-ratio: 1/1; background: rgb(40, 47, 60);" />
+    <img src="{{ '/porait/default.jpg' | relative_url }}" alt="교수사진" style="width: 25%; border-radius: 3px; margin-right: 6px; object-fit: cover; flex-shrink: 0; max-width: 160px; min-width: 90px; aspect-ratio: 1/1; background: rgb(1, 1, 2);" />
     <div style="flex: 1; min-width: 0; background: rgb(40, 47, 60);">
-      <p style="margin: 0px 0; font-size: 1.2em;"> 채용예정자 </p>
-      <p style="margin: 0px 0; font-size: 0.9em; line-height: 1.8">소속:  <br>E-mail:  <br>관심분야:  <br> <a href="" target="_blank" style="color: #4da3ff; text-decoration: none;">📄 CV</a> <a href="" target="_blank" style="color: #4da3ff; text-decoration: none;">📄 Google Scholar</a> <a href="" target="_blank" style="color: #4da3ff; text-decoration: none;">📄 GitHub</a></p>
-      <!-- 텍스트 입력란 또는 회원 정보 영역 -->
-    </div>
-  </div>
-</div>
-<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin: 0 0 16px 0; padding: 0;">
-  <!-- 카드 1: 교수 예시 -->
-  <div style="display: flex; align-items: flex-start; padding: 10px 5px; border: 2px solid #4a5568; border-radius: 6px; background: #181818; margin: 0;">
-    <img src="{{ '/porait/default.jpg' | relative_url }}" alt="교수사진" style="width: 30%; border-radius: 3px; margin-right: 6px; object-fit: cover; flex-shrink: 0; max-width: 160px; min-width: 90px; aspect-ratio: 1/1; background: rgb(40, 47, 60);" />
-    <div style="flex: 1; min-width: 0; background: rgb(40, 47, 60);">
-      <p style="margin: 0px 0; font-size: 1.2em;"> 채용예정자 </p>
-      <p style="margin: 0px 0; font-size: 0.9em; line-height: 1.8">소속:  <br>E-mail:  <br>관심분야:  <br> <a href="" target="_blank" style="color: #4da3ff; text-decoration: none;">📄 CV</a> <a href="" target="_blank" style="color: #4da3ff; text-decoration: none;">📄 Google Scholar</a> <a href="" target="_blank" style="color: #4da3ff; text-decoration: none;">📄 GitHub</a></p>
+      <p style="margin: 0px 0; font-size: 1.0em;"> 채용예정</p>
+      <p style="margin: 0px 0; font-size: 0.9em; line-height: 1.4">소속: <br>Email: <br>관심분야: <br> <a href="{{ site.url }}/download/CV.pdf" target="_blank" style="color: #4da3ff; text-decoration: none;">📄CV</a>  <a href="https://github.com/KYL92" target="_blank" style="color: #4da3ff; text-decoration: none;">📄GitHub</a> <a href="https://scholar.google.com/citations?user=YOUR_SCHOLAR_ID" target="_blank" style="color: #4da3ff; text-decoration: none;">📄Research</a></p>
       <!-- 텍스트 입력란 또는 회원 정보 영역 -->
     </div>
   </div>
